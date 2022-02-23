@@ -1,0 +1,13 @@
+com\maxsoft\holamundo\util\EncriptarPassword.class
+com\maxsoft\holamundo\dao\IPersonaDao.class
+com\maxsoft\holamundo\web\ControladorInicio.class
+com\maxsoft\holamundo\domain\Rol.class
+com\maxsoft\holamundo\service\PersonaServiceImpl.class
+com\maxsoft\holamundo\service\UsuarioService.class
+com\maxsoft\holamundo\service\PersonaService.class
+com\maxsoft\holamundo\domain\Persona.class
+com\maxsoft\holamundo\dao\UsuarioDao.class
+com\maxsoft\holamundo\domain\Usuario.class
+com\maxsoft\holamundo\web\SecurityConfig.class
+com\maxsoft\holamundo\HolamundoApplication.class
+com\maxsoft\holamundo\web\WebConfig.class

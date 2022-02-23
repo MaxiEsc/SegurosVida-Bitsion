@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Agregar Cliente</title>
+
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <section th:fragment="agregarCliente">
+            <div id="agregarCliente" class="modal fade" aria-labelledby="agregarCliente" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header bg-info text-white">
+                            <h5 class="modal-title" th:text="#{form.presentacion}">Agregar Cliente</h5>
+                            <button class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div> 
+                        <form th:action="@{/guardar}" th:object="${persona}"
+                              method="POST" class="was-validated">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="nombre" th:text="#{persona.nombre}">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre_completo" required="true" minlength="1" maxlength="45" th:placeholder="#{form.control.caracteres} + ' ' + '45'">
+                                </div>
+                                <div class="form-group">
+                                    <label for="identificacion" th:text="#{persona.identificacion}"></label>
+                                    <input type="text" class="form-control" name="identificacion" required="true" minlength="1" maxlength="50" th:placeholder="#{form.control.caracteres} + ' ' + '50'">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" th:text="#{persona.email}">Email</label>
+                                    <input type="email" class="form-control" name="email" required="true" minlength="1" maxlength="45" th:placeholder="#{form.control.caracteres} + ' ' + '45'">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edad" th:text="#{persona.edad}">Edad</label>
+                                    <input type="number" class="form-control" name="edad" required="true" minlength="1" maxlength="3" th:placeholder="#{form.control.numeros} + ' ' + '3'">
+                                </div>
+                                <div class="form-group">
+                                    <label for="genero" th:text="#{persona.genero}">Genero</label>
+                                    <input type="text" class="form-control" name="genero" required="true" minlength="1" maxlength="45" th:placeholder="#{form.control.caracteres} + ' ' + '45'">
+                                </div>
+                                <div class="form-group">
+                                    <label for="estado" class="form-control" th:text="#{persona.estado}">Estado</label>
+                                    <input type="checkbox" name="estado">
+                                </div>
+                                <div class="form-group">
+                                    <label for="maneja" class="form-control" th:text="#{persona.maneja}">Maneja</label>
+                                    <input type="checkbox" name="maneja">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lentes" class="form-control" th:text="#{persona.lentes}">Lentes</label>
+                                    <input type="checkbox" name="lentes">
+                                </div>
+                                <div class="form-group">
+                                    <label for="diabetico" class="form-control" th:text="#{persona.diabetico}">Diabetico</label>
+                                    <input type="checkbox" name="diabetico">
+                                </div>
+                                <div class="form-group">
+                                    <label for="enfermedad" class="form-control" th:text="#{persona.enfermedad}">Enfermedad</label>
+                                    <input type="text" class="form-control" name="enfermedad" minlength="1" maxlength="100" th:placeholder="#{form.control.caracteres} + ' ' + '100'">
+                                </div>
+                                <div class="form-group">
+                                    <label for="comentarios" class="form-control" th:text="#{persona.comentarios}">Comentarios</label>
+                                    <input type="text" class="form-control" name="comentarios" minlength="1" maxlength="150" th:placeholder="#{form.control.caracteres} + ' ' + '100'">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" type="submit" th:text="#{form.guardar}">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

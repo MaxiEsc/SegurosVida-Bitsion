@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Editar Cliente</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <section th:fragment="mostrarCliente">
+
+            <div>
+                <table class="table table-stryped">
+                    <thead class="bg-dark text-white">
+                        <tr>
+                            <th>#</th>
+                            <th>[[#{persona.nombre}]]</th>
+                            <th>[[#{persona.identificacion}]]</th>
+                            <th>[[#{persona.edad}]]</th>
+                            <th>[[#{persona.email}]]</th>
+                            <th>[[#{persona.genero}]]</th>
+                            <th>[[#{persona.estado}]]</th>
+                            <th>[[#{persona.maneja}]]</th>
+                            <th>[[#{persona.lentes}]]</th>
+                            <th>[[#{persona.diabetico}]]</th>
+                            <th>[[#{persona.enfermedad}]]</th>
+                            <th>[[#{persona.comentarios}]]</th>
+                        </tr>        
+                    </thead>
+                    <tbody>
+                        <td th:text="${persona.idPersona}">Mostrar Id</td>
+                        <td th:text="${persona.nombre_completo}">Mostrar Nombre</td>
+                        <td th:text="${persona.identificacion}">Mostrar Identificacion</td>
+                        <td th:text="${persona.edad}">Mostrar Edad</td>
+                        <td th:text="${persona.email}">Mostrar Email</td>
+                        <td th:text="${persona.genero}">Mostrar Genero</td>
+                        <td th:text="${persona.estado}">Mostrar Estado</td>
+                        <td th:text="${persona.maneja}">Mostrar Maneja</td>
+                        <td th:text="${persona.lentes}">Mostrar Lentes</td>
+                        <td th:text="${persona.diabetico}">Mostrar Diabetico</td>
+                        <td th:text="${persona.enfermedad}">Mostrar Enfermedad</td>
+                        <td th:text="${persona.comentarios}">Mostrar Comentarios</td>
+                    </tbody>
+                    <div class="modal-footer">
+                        <a  th:href="@{/}" class="btn btn-dark"> [[#{accion.volver}]]</a>
+                    </div>
+                </table>
+            </div>
+        </section>
+    </body>
+</html>
+

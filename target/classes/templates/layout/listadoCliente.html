@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head th:replace="layout/plantilla :: head">
+        <title>Listado Cliente</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <section th:fragment="listadoCliente" id="clientes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>[[#{persona.titulo-lista}]]</h4>
+                            </div>
+                            <div th:if="${personas != null and !personas.empty}">
+                                <table class="table table-stryped">
+                                    <thead class="bg-dark text-white">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>[[#{persona.nombre}]]</th>
+                                            <th>[[#{persona.email}]]</th>
+                                            <th>[[#{persona.identificacion}]]</th>
+                                            <th sec:authorize="hasRole('ROLE_ADMIN')" >[[#{persona.editar}]]</th>
+                                            <th sec:authorize="hasRole('ROLE_ADMIN')" >[[#{persona.eliminar}]]</th>
+                                            <th sec:authorize="hasRole('ROLE_ADMIN')" >[[#{persona.mostrar}]]</th>
+                                        </tr>        
+                                    </thead>
+                                    <tbody th:each="persona, contador : ${personas}">
+                                        <td th:text="${contador.count}">Contar Personas</td>
+                                        <td th:text="${persona.nombre_completo}">Mostrar Nombre</td>
+                                        <td th:text="${persona.email}">Mostrar Email</td>
+                                        <td th:text="${persona.identificacion}">Mostrar identificacion</td>                                        
+                                        <td sec:authorize="hasRole('ROLE_ADMIN')" ><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/editar/} + ${persona.idPersona}" class="btn btn-secondary"><i class="fas fa-angle-double-right"></i> [[#{accion.editar}]]
+                                            </a></td>
+                                        <td sec:authorize="hasRole('ROLE_ADMIN')" ><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/eliminar(idPersona=${persona.idPersona})}" class="btn btn-dark"> <i class="fas fa-angle-double-left"></i> [[#{accion.borrar}]]
+                                            </a></td>
+                                        <td sec:authorize="hasRole('ROLE_ADMIN')" ><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/mostrar/} + ${persona.idPersona}" class="btn btn-warning"><i class="fas fa-expand-arrows-alt"></i> [[#{accion.mostrar}]]
+                                            </a></td>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div th:if="${personas == null or personas.empty}" class="text-center p-2">
+                                <span th:text="#{persona.titulo-vacia}">Vacio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
