@@ -69,7 +69,11 @@ a continuacion la pestañas anteriores mostradas en ingles.
 
 Como veran esta app Funciona con las siguientes configuracion si bien ha sido programada con Apache netbeans 12.6 con el plugin de Spring boot
 
-Aqui dejo sus configuraciones prinicpales, lo de mas en el pom
+Aqui dejo sus configuraciones principales, lo de mas en el pom
+
+![config 1](https://github.com/MaxiEsc/SegurosVida-Bitsion/blob/main/markdown/imagenes/configuracion1.png?raw=true)
+
+![config 2](https://github.com/MaxiEsc/SegurosVida-Bitsion/blob/main/markdown/imagenes/configuracion2.png?raw=true)
 
 
 
